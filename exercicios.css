@@ -1,0 +1,35 @@
+body {
+    background-image: url('img.startups/teste2.jpeg'); /* imagem de fundo */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center center;
+    background-color: #f0f0f0; /* Cor de fundo de fallback */
+}
+
+.pergunta-box,
+.resposta-box {
+    color: black;
+}
+
+.container {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 50px;
+    padding: 30px;
+}
+
+.pergunta-box {
+    background-color: #efd40b;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+.resposta-box {
+    background-color: #0750fa;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}

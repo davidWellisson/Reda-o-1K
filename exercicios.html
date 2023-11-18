@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercícios de Redação</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="exercicios.css">
+  </head>
+  <body>
+    <div class="container bg-secondary">
+      <h1 class="text-center text-light mb-4">Hora de praticar!</h1>
+      <div class="form-group text-light">
+        <label for="nivel">Escolha um Tema:</label>
+        <select class="form-control bg-secondary btn btn-dark text-light" id="nivel">
+          <option value="1">Proposta 1</option>
+          <option value="2">Proposta 2</option>
+          <option value="3">Proposta 3</option>
+          <option value="4">Proposta 4</option>
+          <option value="5">Proposta 5</option>
+        </select>
+      </div>
+      <div class="pergunta-box bg-dark text-light" id="pergunta-box">
+        <label for="pergunta">Tema:</label>
+        <div id="pergunta-text"></div>
+      </div>
+      <div class="resposta-box bg-dark text-light">
+        <label for="resposta">Sua Resposta (máximo 30 linhas):</label>
+        <textarea class="form-control bg-dark text-light" id="resposta" rows="30"></textarea>
+      </div>
+      <button class="btn btn-dark" onclick="enviarResposta()">Enviar</button>
+    </div>
+    <script>
+      document.getElementById("nivel").addEventListener("change", function() {
+        var nivel = document.getElementById("nivel").value;
+        var pergunta = "";
+        switch (nivel) {
+          case "1":
+            pergunta = "Escreva sobre um hobby que você gosta e explique por que ele é importante para você.";
+            break;
+          case "2":
+            pergunta = "Descreva um lugar especial que você visitou e compartilhe suas experiências e sentimentos sobre esse lugar.";
+            break;
+          case "3":
+            pergunta = "Reflita sobre a importância da empatia na sociedade moderna e como ela pode melhorar as relações humanas.";
+            break;
+          case "4":
+            pergunta = "Analise os impactos positivos e negativos das redes sociais na vida das pessoas.";
+            break;
+          case "5":
+            pergunta = "Escreva sobre um problema social importante e proponha soluções viáveis para enfrentá-lo.";
+            break;
+        }
+        document.getElementById("pergunta-text").textContent = pergunta; // Atualiza o conteúdo da div com a pergunta
+        document.getElementById("pergunta").value = pergunta; // Atualiza o conteúdo do textarea com a pergunta
+      });
+
+      function enviarResposta() {
+        var nivel = document.getElementById("nivel").value;
+        var pergunta = document.getElementById("pergunta").value;
+        var resposta = document.getElementById("resposta").value;
+        // Verificar se a resposta tem no máximo 30 linhas
+        var linhas = resposta.split('\n');
+        if (linhas.length > 30) {
+          alert("Sua resposta excede o limite de 30 linhas.");
+          return;
+        }
+        // Aqui você pode enviar os dados (nivel, pergunta e resposta) para o seu banco de dados usando AJAX ou outra tecnologia do lado do cliente.
+        // Certifique-se de usar uma linguagem do lado do servidor para lidar com os dados recebidos.
+        alert("Dados enviados para o banco de dados:\n\nNível: " + nivel + "\nPergunta: " + pergunta + "\nResposta: " + resposta);
+      }
+    </script>
+  </body>
+</html>
