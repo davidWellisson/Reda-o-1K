@@ -1,0 +1,17 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-color: #000; /* Cor de fundo preto */
+    color: #fff; /* Cor do texto branco */
+}
+
+h2 {
+    color: #6c757d;
+}
+
+.repertorios {
+    background-color: #6c757d; /* Cor cinza escuro */
+    padding: 50px;
+    margin-top: 10px;
+    border-radius: 10px; /* Borda arredondada */
+}
